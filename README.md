@@ -4,9 +4,10 @@
 <p>KnoWaste is a food preording system that aims to eliminate foodwaste by giving catering institutions accurate information.</p>
 
 <h2>BootStrap</h2> 
-<p>We will be using the grid layout system from BootStrap. 
+<p>We will be using the grid layout system from BootStrap. BootStrap has already been installed</p>
 
-
+<h2>BEM</h2>
+<p>Use BEM for SCSS class names. Information on how to use BEM can be found at http://getbem.com/</p>
 
 
 
