@@ -5,7 +5,7 @@ import Step3 from './step3/step3';
 import styles from './register.scss';
 
 const Register = () => {
-    const [formStep, setFormStep] = useState(3);
+    const [formStep, setFormStep] = useState(1);
     const name = "name placeholder" // insert name here once we have access to step one of form
 
     const getTitle = () => {
@@ -36,17 +36,29 @@ const Register = () => {
 
     return (
         <>
-            <header>
-                <h2> { getTitle() } </h2>
-            </header>
-            <section>
-                <nav>
-                    Nav section
-                </nav>
-                <div>
+            <main class="container register">
+                <header class="register__title">
+                    <h2> { getTitle() } </h2>
+                </header>
+                <section class="container nav">
+                    <nav class="row flex-d">
+                        <div class="col nav__item">
+                            <h5>STEP 01</h5>
+                            <span>Personal Details</span>
+                        </div>
+                        <div class="col nav__item">
+                            <h5>STEP 02</h5>
+                            <span>User Details</span>
+                        </div>
+                        <div class="col nav__item">
+                            <h5>STEP 03</h5>
+                            <span>Terms & Conditions</span>
+                        </div>
+                    </nav>
+                </section>
                     { getForm() }
-                </div>
-            </section>
+                
+            </main>
         </>
     )
 }

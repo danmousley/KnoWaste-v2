@@ -1,0 +1,29 @@
+.register {
+    width: 60vw;
+    height: 70vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border: 1px solid black;
+
+    &__title {
+        height: 10vh;
+        padding: 2% 0;
+    }
+}
+
+.nav {
+    height: 20vh;
+    width: 100%;
+    border: 1px solid black;
+
+    &__item {
+        border: 1px solid black;
+
+        h5 {
+            margin: 0;
+        }
+    }
+}
+
+
+
