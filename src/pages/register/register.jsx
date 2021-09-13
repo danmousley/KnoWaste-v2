@@ -20,12 +20,18 @@ const Register = () => {
 
     const getForm = () => {
         if (formStep === 1) {
-            return <Step1 />
+            return <Step1 handleClick={ handleClick }/>
         } else if (formStep === 2) {
-            return <Step2 />
+            return <Step2 handleClick={ handleClick }/>
         } else if (formStep === 3) {
-            return <Step3 />
+            return <Step3 handleClick={ handleClick }/>
         }
+    }
+
+    const handleClick = (e) => {
+        e.preventDeafult()
+        let step = e.target.value
+        setFormStep(step)
     }
 
     return (
