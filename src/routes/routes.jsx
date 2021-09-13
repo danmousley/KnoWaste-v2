@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from "@reach/router";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import LogIn from '../pages/login';
 import Register from '../pages/register';
 import ForgotPassword from '../pages/forgotpassword';
@@ -12,11 +12,11 @@ import NotFound from '../shared/notfound';
 const Routes = () => {
     return (
         <Router>
-            <LogIn path={["/", "login"]} />
-            <Register path="/register" />
-            <ForgotPassword path="/forgotpassword" />
-            <Dashboard path ="/dashboard" />
-            <NotFound default path="/doesntexist" />
+            <Route exact={true} path={["/", "/login"]} component={LogIn} />
+            <Route path="/register" component={Register} />
+            <Route path="/forgotpassword" component={ForgotPassword} />
+            <Route path ="/dashboard" component={Dashboard} />
+            <Route path="/doesntexist" component={NotFound} />
         </Router>
     )
 }
