@@ -1,12 +1,18 @@
 import logo from './logo.svg';
 import './App.scss';
 import Example from './pages/example/example.jsx';
+import Routes from './routes';
 
 function App() {
   return (
-    <div className="App">
-        <Example></Example>
-    </div>
+    <>
+      {/* <section>
+        <NavBar />
+      </section> */}
+      <section>
+        <Routes />
+      </section>
+    </>
   );
 }
 
