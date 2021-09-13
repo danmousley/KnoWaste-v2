@@ -1,0 +1,34 @@
+@use '../../assets/styles/variables' as *;
+
+.nav {
+  background-image: url('../../assets/images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: $font-family-base;
+
+  &__title {
+    color: $secondary;
+    font-weight: 800;
+    margin-left: 20px;
+  }
+  
+  &__links {
+    margin: 0;
+  }
+
+  &__link {
+
+    list-style-type: none;
+
+    a:not(.btn) {
+      color: $secondary;
+      text-decoration: none;
+    }
+
+    .btn {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+}
+

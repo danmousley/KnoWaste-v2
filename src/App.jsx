@@ -1,14 +1,14 @@
 import logo from './logo.svg';
 import './App.scss';
-import Example from './pages/example/example.jsx';
 import Routes from './routes/routes';
+import NavBar from './shared/navbar/navbar.jsx';
 
 function App() {
   return (
     <>
-      {/* <section>
+      <section>
         <NavBar />
-      </section> */}
+      </section>
       <section>
         <Routes />
       </section>
