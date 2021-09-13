@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from './register.scss';
 
 const Register = () => {
     return (
@@ -8,4 +9,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default Register;

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from './login.scss';
 
 const LogIn = () => {
     return (
@@ -8,4 +9,4 @@ const LogIn = () => {
     )
 }
 
-export default LogIn
+export default LogIn;
