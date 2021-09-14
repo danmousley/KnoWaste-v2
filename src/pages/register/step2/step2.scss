@@ -1,0 +1,19 @@
+.form {
+    height: 40vh;
+    border: 1px solid black;
+
+    &__row {
+        height: 25%;
+        padding: 1% 0;
+    }
+}
+
+.buttons {
+    height: 10vh;
+    border: 1px solid red;
+}
+
+.button--form {
+    padding: 1% 2%;
+    margin: auto;
+}

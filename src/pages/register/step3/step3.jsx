@@ -1,11 +1,40 @@
 import React from 'react';
 import styles from './step3.scss';
 
-const Step3 = () => {
+const Step3 = (props) => {
+    const {handleClick} = props;
+
     return (
-        <div>
-            Step 3 of the form
+        <>
+        <div class="form">
+            <h5>Our Terms & Conditions</h5>
+            <p class="form__terms">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, 
+                atque. Nesciunt alias voluptas hic quidem sit voluptate tempora ad voluptates 
+                facere nam debitis, in enim nihil tenetur rerum dolorem ex?
+            </p>
+            <p class="form__terms">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Esse enim quis, voluptatem saepe et, voluptas architecto velit illo eligendi optio quaerat quae atque earum sunt? 
+            </p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                <label class="form-check-label" for="flexCheckDefault">
+                    By ticking this box, you have acknoledged that you have read and agree to our terms and conditions.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
+                <label class="form-check-label" for="flexCheckChecked">
+                    Opt-in to receive emails regarding any further announcements or information regarding new features or Knowaste products.
+                </label>
+            </div>
         </div>
+        <div class="buttons my-auto">
+            <button type="button" onClick={e => handleClick(e)} class="btn btn-secondary button--form" value={2} >Previous</button>
+            <button type="button" onClick={e => handleClick(e)} class="btn btn-primary button--form" value={2} >Create Account</button>
+        </div>
+        </>
     )
 }
 

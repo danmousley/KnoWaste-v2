@@ -1,7 +1,43 @@
+@import "../../../variables.scss";
+
 .form {
-    height: 50%;
+    height: 40vh;
+    border: 1px solid black;
+
+    &__row {
+        height: 25%;
+        padding: 1% 0;
+    }
+
+    &__label {
+        color: $text-color;
+        font-size: 0.9rem;
+    }
+
+    &__input {
+        width: 100%;
+        border: none;
+        background-color: $tertiary-color;
+    }
+
+    &__error-message {
+        font-size: 0.7rem;
+        margin: 0;
+        padding: 0;
+        color: red;
+    }
+}
+
+.invalid {
+    border: 1px red solid;
 }
 
 .buttons {
-    height: 10%;
+    height: 10vh;
+    border: 1px solid red;
+}
+
+.button--form {
+    padding: 1% 2%;
+    margin: auto;
 }

@@ -1,0 +1,21 @@
+.form {
+    height: 40vh;
+    border: 1px solid black;
+
+    &__terms {
+        font-size: 0.8rem;
+        padding: 0 2%;
+    }
+}
+
+.buttons {
+    height: 10vh;
+    border: 1px solid red;
+    margin: auto 0;
+    padding: 0;
+}
+
+.button--form {
+    padding: 1% 3%;
+    margin-right: 2%;
+}

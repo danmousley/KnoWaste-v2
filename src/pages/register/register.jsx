@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Step1 from './step1/step1';
 import Step2 from './step2/step2';
 import Step3 from './step3/step3';
+import Stepper from './stepper/stepper';
 import styles from './register.scss';
 
 const Register = () => {
@@ -29,36 +30,30 @@ const Register = () => {
     }
 
     const handleClick = (e) => {
-        e.preventDeafult()
+        // e.preventDefault()
         let step = e.target.value
+        console.log(step)
         setFormStep(step)
     }
 
+    // useEffect(() => {
+    //     getTitle()
+    //     getForm()
+    // }, [formStep])
+
     return (
         <>
-            <main class="container register">
+            <body class="container register">
                 <header class="register__title">
-                    <h2> { getTitle() } </h2>
+                    <h2 class="titleText"> { getTitle() } </h2>
                 </header>
-                <section class="container nav">
-                    <nav class="row flex-d">
-                        <div class="col nav__item">
-                            <h5>STEP 01</h5>
-                            <span>Personal Details</span>
-                        </div>
-                        <div class="col nav__item">
-                            <h5>STEP 02</h5>
-                            <span>User Details</span>
-                        </div>
-                        <div class="col nav__item">
-                            <h5>STEP 03</h5>
-                            <span>Terms & Conditions</span>
-                        </div>
-                    </nav>
+                <section class="stepper">
+                    <Stepper formStep={formStep}/>
                 </section>
+                <main class="form">
                     { getForm() }
-                
-            </main>
+                </main>
+            </body>
         </>
     )
 }
