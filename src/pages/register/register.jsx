@@ -6,7 +6,7 @@ import Stepper from './stepper/stepper';
 import styles from './register.scss';
 
 const Register = () => {
-    const [formStep, setFormStep] = useState(2);
+    const [formStep, setFormStep] = useState(3);
     const name = "name placeholder" // insert name here once we have access to step one of form
     const [formData, setFormData] = useState([]);
 
@@ -14,6 +14,7 @@ const Register = () => {
         console.log(data)
         const updatedFormData = formData.push(data)
         setFormData(updatedFormData)
+        setFormStep(2)
     }
 
     const getTitle = () => {
