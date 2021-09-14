@@ -37,6 +37,10 @@
     .step-name {
         color: $text-color;
     }
+
+    &:hover {
+        cursor: pointer;
+    }
     
 }
 

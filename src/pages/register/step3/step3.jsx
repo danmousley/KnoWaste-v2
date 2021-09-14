@@ -33,8 +33,8 @@ const Step3 = (props) => {
             </div>
         </div>
         <div class="buttons my-auto">
-            <button type="button" onClick={handlePreviousClick()} class="btn btn-secondary button--form" value={2} >Previous</button>
-            <button type="submit" class="btn btn-primary button--form" value={2} >Create Account</button>
+            <button type="button" onClick={(e) => handlePreviousClick(e)} class="btn btn-secondary button--form" value={2} >Previous</button>
+            <button type="submit" class="btn btn-primary button--form" >Create Account</button>
         </div>
         </>
     )

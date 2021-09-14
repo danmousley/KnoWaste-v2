@@ -19,16 +19,17 @@ const Register = () => {
         setName(data.firstName);
         if (formStep === 1 || formStep === 2) {
             let newStep = formStep + 1
-            setFormStep(2)
+            setFormStep(newStep)
         }
         if (formStep === 3) {
-            alert("Succesfully registered!")
+            console.log("Succesfully registered!")
         }
     }
 
-    const handlePreviousClick = () => {
-        // let newStep = formStep - 1
-        // setFormStep(newStep)
+    const handlePreviousClick = (e) => {
+        e.preventDefault()
+        let newStep = formStep - 1
+        setFormStep(newStep)
     }
 
     const getTitle = () => {

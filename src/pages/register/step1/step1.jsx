@@ -47,10 +47,11 @@ const Step1 = (props) => {
                         </div>
                     </div>
                 </section>
+
                 <div class="buttons container">
                     <div class="row h-100">
                         <div class="col my-auto">
-                            <button type="submit" class="btn btn-primary button--form" value={2} >Next</button>
+                            <button type="submit" class="btn btn-primary button--form" >Next</button>
                         </div>
                     </div>
                 </div>

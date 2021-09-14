@@ -2,13 +2,13 @@
 
 .register {
     width: 60vw;
-    height: 70vh;
+    height: 80vh;
     margin-top: 10vh;
     margin-bottom: 10vh;
     border: 1px solid black;
 
     &__title {
-        height: 10vh;
+        height: 15vh;
         padding: 2% 0;
         color: $primary-color;
         
@@ -16,7 +16,7 @@
 
     &__titleText {
         color: $primary-color;
-        // font-size: 2rem;
+        font-size: 2rem;
         font-weight: bold;
     }
 }
