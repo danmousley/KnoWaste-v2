@@ -1,9 +1,10 @@
 @import "../../../variables.scss";
 
 .step {
-    border: 1px solid black;
+    border: 2px solid $tertiary-color;
     background-color: $tertiary-color;
-    padding: 2%;
+    padding: 2% 4%;
+    color: #7a7a7a;
     
 
     .step-number {
@@ -16,3 +17,26 @@
         font-weight: bold;
     }
 }
+
+.active {
+    border-top-color: $primary-color;
+
+    .step-name {
+        color: $primary-color;
+    }
+}
+
+.default {
+
+}
+
+.complete {
+    background-color: #ECECF8;
+    border-color: #ECECF8;
+
+    .step-name {
+        color: $text-color;
+    }
+    
+}
+

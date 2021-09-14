@@ -3,7 +3,7 @@ import styles from './step1.scss'
 import { useForm } from "react-hook-form";
 
 const Step1 = (props) => {
-    const {handleClick, onSubmit} = props;
+    const {onSubmit} = props;
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     // const onSubmit = (data) => { //how do I move this to register?
     //     console.log(data)

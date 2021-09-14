@@ -3,11 +3,11 @@ import styles from './step2.scss';
 import { useForm } from "react-hook-form";
 
 const Step2 = (props) => {
-    const {handleClick} = props;
+    const {handlePreviousClick, onSubmit} = props;
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = (data) => { //how do I move this to register?
-        console.log(data)
-    }
+    // const onSubmit = (data) => { //how do I move this to register?
+    //     console.log(data)
+    // }
 
     return (
         <>
@@ -48,8 +48,8 @@ const Step2 = (props) => {
             <div class="buttons container">
                 <div class="row h-100">
                     <div class="col my-auto">
-                        <button type="button" onClick={e => handleClick(e)} class="btn btn-secondary button--form" value={2} >Previous</button>
-                        <button type="button" onClick={e => handleClick(e)} class="btn btn-primary button--form" value={2} >Next</button>
+                        <button type="button" onClick={handlePreviousClick()} class="btn btn-secondary button--form" value={2} >Previous</button>
+                        <button type="submit" class="btn btn-primary button--form" value={2} >Next</button>
                     </div>
                 </div>
             </div>

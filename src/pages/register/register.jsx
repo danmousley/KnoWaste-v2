@@ -6,15 +6,29 @@ import Stepper from './stepper/stepper';
 import styles from './register.scss';
 
 const Register = () => {
-    const [formStep, setFormStep] = useState(3);
-    const name = "name placeholder" // insert name here once we have access to step one of form
+    const [formStep, setFormStep] = useState(1);
     const [formData, setFormData] = useState([]);
+    const [name, setName] = useState([]);
 
     const onSubmit = (data) => {
         console.log(data)
-        const updatedFormData = formData.push(data)
-        setFormData(updatedFormData)
-        setFormStep(2)
+        // let updatedFormData = formData
+        // console.log(updatedFormData)
+        // updatedFormData.push(data)
+        // setFormData(updatedFormData)
+        setName(data.firstName);
+        if (formStep === 1 || formStep === 2) {
+            let newStep = formStep + 1
+            setFormStep(2)
+        }
+        if (formStep === 3) {
+            alert("Succesfully registered!")
+        }
+    }
+
+    const handlePreviousClick = () => {
+        // let newStep = formStep - 1
+        // setFormStep(newStep)
     }
 
     const getTitle = () => {
@@ -29,11 +43,11 @@ const Register = () => {
 
     const getForm = () => {
         if (formStep === 1) {
-            return <Step1 onSubmit={onSubmit} handleClick={ handleClick }/>
+            return <Step1 onSubmit={onSubmit}/>
         } else if (formStep === 2) {
-            return <Step2 onSubmit={onSubmit} handleClick={ handleClick }/>
+            return <Step2 onSubmit={onSubmit} handlePreviousClick={ handlePreviousClick }/>
         } else if (formStep === 3) {
-            return <Step3 onSubmit={onSubmit} handleClick={ handleClick }/>
+            return <Step3 onSubmit={onSubmit} handlePreviousClick={ handlePreviousClick }/>
         }
     }
 

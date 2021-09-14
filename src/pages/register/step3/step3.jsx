@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from './step3.scss';
+import { useForm } from "react-hook-form";
 
 const Step3 = (props) => {
-    const {handleClick} = props;
+    const {handlePreviousClick, onSubmit} = props;
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     return (
         <>
-        <div class="form">
+        <div class="form" onSubmit={handleSubmit(onSubmit)}>
             <h5>Our Terms & Conditions</h5>
             <p class="form__terms">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, 
@@ -31,8 +33,8 @@ const Step3 = (props) => {
             </div>
         </div>
         <div class="buttons my-auto">
-            <button type="button" onClick={e => handleClick(e)} class="btn btn-secondary button--form" value={2} >Previous</button>
-            <button type="button" onClick={e => handleClick(e)} class="btn btn-primary button--form" value={2} >Create Account</button>
+            <button type="button" onClick={handlePreviousClick()} class="btn btn-secondary button--form" value={2} >Previous</button>
+            <button type="submit" class="btn btn-primary button--form" value={2} >Create Account</button>
         </div>
         </>
     )
