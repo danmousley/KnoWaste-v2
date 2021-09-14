@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import LogIn from '../pages/login';
+import LogIn from '../pages/login/login';
 import Register from '../pages/register/register';
-import ForgotPassword from '../pages/forgotpassword';
-import Dashboard from '../pages/dashboard';
-import NotFound from '../shared/notfound';
+import ForgotPassword from '../pages/forgotpassword/forgotpassword';
+import Dashboard from '../pages/dashboard/dashboard';
+import NotFound from '../shared/notfound/notfound';
 
 // - Install react-router-dom and allow users to navigate to the following pages:
 //  "signin", "signout", "register", "forgotpassword", "dashboard", "notfound/404"

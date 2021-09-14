@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import styles from './forgotpassword.scss';
 
 const ForgotPassword = () => {
     return (
@@ -8,4 +9,4 @@ const ForgotPassword = () => {
     )
 }
 
-export default ForgotPassword
+export default ForgotPassword;
