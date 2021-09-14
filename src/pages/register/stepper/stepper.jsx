@@ -11,16 +11,16 @@ const Stepper = (props) => {
         <nav class="container h-100">
             <div class="row h-100">
                 <div className={`col step ${step1Styles}`} >
-                    <h5>STEP 01</h5>
-                    <span>Personal Details</span>
+                    <h5 class="step-number">STEP 01</h5>
+                    <span class="step-name">Personal Details</span>
                 </div>
                 <div className={`col step ${step2Styles}`} >
-                    <h5>STEP 02</h5>
-                    <span>User Details</span>
+                    <h5 class="step-number">STEP 02</h5>
+                    <span class="step-name">User Details</span>
                 </div>
                 <div className={`col step ${step3Styles}`} >
-                    <h5>STEP 03</h5>
-                    <span>Terms & Conditions</span>
+                    <h5 class="step-number">STEP 03</h5>
+                    <span class="step-name">Terms & Conditions</span>
                 </div>
             </div>
         </nav>

@@ -16,8 +16,11 @@
 
     &__input {
         width: 100%;
+        color: $text-color;
         border: none;
         background-color: $tertiary-color;
+        padding: 1%;
+        font-size: 0.8rem;
     }
 
     &__error-message {

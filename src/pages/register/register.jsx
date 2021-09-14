@@ -6,8 +6,15 @@ import Stepper from './stepper/stepper';
 import styles from './register.scss';
 
 const Register = () => {
-    const [formStep, setFormStep] = useState(1);
+    const [formStep, setFormStep] = useState(2);
     const name = "name placeholder" // insert name here once we have access to step one of form
+    const [formData, setFormData] = useState([]);
+
+    const onSubmit = (data) => {
+        console.log(data)
+        const updatedFormData = formData.push(data)
+        setFormData(updatedFormData)
+    }
 
     const getTitle = () => {
         if (formStep === 1) {
@@ -21,11 +28,11 @@ const Register = () => {
 
     const getForm = () => {
         if (formStep === 1) {
-            return <Step1 handleClick={ handleClick }/>
+            return <Step1 onSubmit={onSubmit} handleClick={ handleClick }/>
         } else if (formStep === 2) {
-            return <Step2 handleClick={ handleClick }/>
+            return <Step2 onSubmit={onSubmit} handleClick={ handleClick }/>
         } else if (formStep === 3) {
-            return <Step3 handleClick={ handleClick }/>
+            return <Step3 onSubmit={onSubmit} handleClick={ handleClick }/>
         }
     }
 
@@ -45,7 +52,7 @@ const Register = () => {
         <>
             <body class="container register">
                 <header class="register__title">
-                    <h2 class="titleText"> { getTitle() } </h2>
+                    <h2 class="register__titleText"> { getTitle() } </h2>
                 </header>
                 <section class="stepper">
                     <Stepper formStep={formStep}/>

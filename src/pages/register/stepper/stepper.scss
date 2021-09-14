@@ -1,8 +1,18 @@
+@import "../../../variables.scss";
+
 .step {
     border: 1px solid black;
+    background-color: $tertiary-color;
+    padding: 2%;
     
 
-    h5 {
-        margin: 0;
+    .step-number {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .step-name {
+        font-size: 0.8rem;
+        font-weight: bold;
     }
 }

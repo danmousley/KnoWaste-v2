@@ -10,22 +10,32 @@
     &__title {
         height: 10vh;
         padding: 2% 0;
+        color: $primary-color;
+        
     }
 
     &__titleText {
         color: $primary-color;
+        // font-size: 2rem;
+        font-weight: bold;
     }
 }
 
 .stepper {
     height: 10vh;
-    width: 100%;
+    width: 50vw;
+    margin: 0 auto;
     border: 1px solid black;
 }
 
 .buttons {
     border: 1px solid black;
     margin: auto 0;
+}
+
+.form {
+    width: 50vw;
+    margin: 0 auto;
 }
 
 

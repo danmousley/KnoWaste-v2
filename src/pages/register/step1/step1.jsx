@@ -3,11 +3,11 @@ import styles from './step1.scss'
 import { useForm } from "react-hook-form";
 
 const Step1 = (props) => {
-    const {handleClick} = props;
+    const {handleClick, onSubmit} = props;
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = (data) => {
-        console.log(data)
-    }
+    // const onSubmit = (data) => { //how do I move this to register?
+    //     console.log(data)
+    // }
 
     return (
         <>
@@ -21,7 +21,7 @@ const Step1 = (props) => {
                         </div>
                         <div class="col">
                             <h6 class="form__label">Last Name</h6>
-                            <input {...register("lastName", { required: true })} type="text" className={`form__input ${errors.LastName ? "invalid" : ""} `} />
+                            <input {...register("lastName", { required: true })} type="text" className={`form__input ${errors.lastName ? "invalid" : ""} `} />
                             {errors.lastName && <span class="form__error-message">This field is required</span>}
                         </div>
                     </div>
@@ -42,7 +42,7 @@ const Step1 = (props) => {
                     <div class="row form__row">
                         <div class="col">
                             <h6 class="form__label">Mobile Number</h6>
-                            <input {...register("mobileNo", { required: true })} type="text" className={`form__input ${errors.mobileNo ? "invalid" : ""} `} />
+                            <input {...register("mobileNo", { required: true })} type="number" className={`form__input ${errors.mobileNo ? "invalid" : ""} `} />
                             {errors.mobileNo && <span class="form__error-message">This field is required</span>}
                         </div>
                     </div>
