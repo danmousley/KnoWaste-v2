@@ -16,9 +16,7 @@ const Register = () => {
         // console.log(updatedFormData)
         // updatedFormData.push(data)
         // setFormData(updatedFormData)
-        if (!name) {
-            setName(data.firstName);
-        }
+        setName(data.firstName);
         if (formStep === 1 || formStep === 2) {
             let newStep = formStep + 1
             setFormStep(newStep)

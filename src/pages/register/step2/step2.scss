@@ -1,24 +1,26 @@
 @import "../../../variables.scss";
 
 .form {
-    height: 45vh;
+    height: auto;
+    min-height: 45vh;
     padding-bottom: 5vh;
     // border: 1px solid black;
 
     &__row {
-        height: 25%;
+        height: auto;
         padding: 1% 0;
+
     }
 
     &__label {
         color: $text-color;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     &__input {
         width: 100%;
         margin: 0;
-        height: 50%;
+        height: 5vh;
         color: $secondary-color;
         border: none;
         background-color: $tertiary-color;
@@ -27,12 +29,19 @@
         font-weight: bold;
     }
 
-    &__error-message {
+    // &__error-message {
+    //     font-size: 0.7rem;
+    //     margin: 0;
+    //     padding: 0;
+    //     color: red;
+    // }
+
+    &__feedback {
         font-size: 0.7rem;
         margin: 0;
         padding: 0;
-        color: red;
     }
+    
 }
 
 .invalid {

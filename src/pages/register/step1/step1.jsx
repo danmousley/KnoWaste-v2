@@ -9,10 +9,12 @@ const Step1 = (props) => {
     const step1Submit = useRef(null)
 
     const checkFormIsValid = (e) => {
-        console.log(e.target.value)
+        step1Form.current.classList.add('was-validated')
+        console.log(e.target.classList)
         if (step1Form.current.checkValidity()) {
             step1Submit.current.disabled = false
-            step1Form.current.classList.add('was-validated')
+        } else {
+            step1Submit.current.disabled = true
         }
     }
 
@@ -23,36 +25,59 @@ const Step1 = (props) => {
                     <div class="row form__row">
                         <div class="col">
                             <h6 class="form__label">First Name</h6>
-                            <input {...register("firstName")} type="text" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required/>
+                            <input {...register("firstName", { required: true })} type="text" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required />
                             <div class="invalid-feedback">
-                                Please enter a valid first name
+                                <span class="form__feedback">Please enter a valid first name</span>
+                            </div>
+                            <div class="valid-feedback">
+                                <span class="form__feedback">Looks good!</span>
                             </div>
                         </div>
                         <div class="col">
                             <h6 class="form__label">Last Name</h6>
-                            <input {...register("lastName", { required: true })} type="text" className={`form__input ${errors.lastName ? "invalid" : ""} `} />
-                            {errors.lastName && <span class="form__error-message">This field is required</span>}
+                            <input {...register("lastName", { required: true })} type="text" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required />
+                            <div class="invalid-feedback">
+                                <span class="form__feedback">Please enter a valid last name</span>
+                            </div>
+                            <div class="valid-feedback">
+                                <span class="form__feedback">Looks good!</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row form__row">
                         <div class="col">
                             <h6 class="form__label">Email Address</h6>
-                            <input {...register("email", { required: true })} type="email" className={`form__input ${errors.email ? "invalid" : ""} `} />
-                            {errors.email && <span class="form__error-message">This field is required</span>}
+                            <input {...register("email", { required: true })} type="email" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required />
+                            <div class="invalid-feedback">
+                                <span class="form__feedback">Please enter a valid email</span>
+                            </div>
+                            <div class="valid-feedback">
+                                <span class="form__feedback">Looks good!</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row form__row">
                         <div class="col">
                             <h6 class="form__label">Date of birth</h6>
-                            <input {...register("dateOfBirth", { required: true })} type="date" className={`form__input ${errors.dateOfBirth ? "invalid" : ""} `} />
-                            {errors.dateOfBirth && <span class="form__error-message">This field is required</span>}
+                            <input {...register("dateOfBirth", { required: true })} type="date" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required />
+                            <div class="invalid-feedback">
+                                <span class="form__feedback">Please enter a valid date of birth</span>
+                            </div>
+                            <div class="valid-feedback">
+                                <span class="form__feedback">Looks good!</span>
+                            </div>
                         </div>
                     </div>
                     <div class="row form__row">
                         <div class="col">
                             <h6 class="form__label">Mobile Number</h6>
-                            <input {...register("mobileNo", { required: true })} type="number" className={`form__input ${errors.mobileNo ? "invalid" : ""} `} />
-                            {errors.mobileNo && <span class="form__error-message">This field is required</span>}
+                            <input {...register("mobileNo", { required: true })} type="number" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required />
+                            <div class="invalid-feedback">
+                                <span class="form__feedback">Please enter a valid mobile</span>
+                            </div>
+                            <div class="valid-feedback">
+                                <span class="form__feedback">Looks good!</span>
+                            </div>
                         </div>
                     </div>
                 </section>

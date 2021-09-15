@@ -1,7 +1,8 @@
 @import "../../../variables.scss";
 
 .form {
-    height: 48vh;
+    height: auto;
+    min-height: 48vh;
     padding-bottom: 5vh;
     // border: 1px solid black;
 
@@ -35,6 +36,7 @@
         font-size: 0.9rem;
         padding: 0 1%;
     }
+    
 }
 
 .buttons {
