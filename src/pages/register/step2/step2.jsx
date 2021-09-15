@@ -40,7 +40,7 @@ const Step2 = (props) => {
                 <div class="row form__row">
                     <div class="col">
                         <h6 class="form__label">Student No</h6>
-                        <input {...register("studentNo", { required: true })} type="number" class="form-control form__input" required />
+                        <input {...register("studentNo", { required: true })} type="number" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required />
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please enter a valid student number</span>
                         </div>
@@ -52,7 +52,7 @@ const Step2 = (props) => {
                 <div class="row form__row">
                     <div class="col">
                         <h6 class="form__label">Create Password</h6>
-                        <input {...register("password", { required: true })} type="password" class="form-control form__input" required />
+                        <input {...register("password", { required: true })} type="password" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required />
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please enter a valid password</span>
                         </div>
@@ -64,7 +64,7 @@ const Step2 = (props) => {
                 <div class="row form__row">
                     <div class="col">
                     <h6 class="form__label">Confirm Password</h6>
-                        <input {...register("password", { required: true })} type="password" class="form-control form__input" required />
+                        <input {...register("password", { required: true })} type="password" onBlur={(e) => checkFormIsValid(e)} class="form-control form__input" required />
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please confirm your password</span>
                         </div>
