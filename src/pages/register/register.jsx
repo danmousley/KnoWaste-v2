@@ -5,11 +5,14 @@ import Step3 from './step3/step3';
 import Stepper from './stepper/stepper';
 import styles from './register.scss';
 import { Alert } from 'bootstrap';
+import { useHistory } from 'react-router';
 
 const Register = () => {
     const [formStep, setFormStep] = useState(3);
     const [formData, setFormData] = useState([]);
     const [name, setName] = useState([]);
+
+    const history = useHistory()
 
     const onSubmit = (data) => {
         console.log(data)
@@ -23,7 +26,8 @@ const Register = () => {
             setFormStep(newStep)
         }
         if (formStep === 3) {
-            alert("Succesfully registered!")
+            let path = "/dashboard"
+            history.push(path)
         }
     }
 
