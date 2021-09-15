@@ -27,6 +27,13 @@ const Register = () => {
         }
     }
 
+    const handleStepper = (e) => {
+        // if (e.target.value < formStep) {
+        //     console.log(e.target.value)
+        //     setFormStep(e.target.value)
+        // }
+    }
+
     const handlePreviousClick = (e) => {
         e.preventDefault()
         let newStep = formStep - 1
@@ -61,7 +68,7 @@ const Register = () => {
                     <h2 class="register__titleText"> { getTitle() } </h2>
                 </header>
                 <section class="stepper">
-                    <Stepper formStep={formStep}/>
+                    <Stepper handleStepper={handleStepper} formStep={formStep}/>
                 </section>
                 <main class="form">
                     { getForm() }
