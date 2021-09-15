@@ -4,9 +4,10 @@ import Step2 from './step2/step2';
 import Step3 from './step3/step3';
 import Stepper from './stepper/stepper';
 import styles from './register.scss';
+import { Alert } from 'bootstrap';
 
 const Register = () => {
-    const [formStep, setFormStep] = useState(1);
+    const [formStep, setFormStep] = useState(3);
     const [formData, setFormData] = useState([]);
     const [name, setName] = useState([]);
 
@@ -22,7 +23,7 @@ const Register = () => {
             setFormStep(newStep)
         }
         if (formStep === 3) {
-            console.log("Succesfully registered!")
+            alert("Succesfully registered!")
         }
     }
 
@@ -52,12 +53,6 @@ const Register = () => {
         }
     }
 
-    const handleClick = (e) => {
-        // e.preventDefault()
-        let step = e.target.value
-        console.log(step)
-        setFormStep(step)
-    }
 
     return (
         <>
