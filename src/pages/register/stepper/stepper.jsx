@@ -34,8 +34,8 @@ const Stepper = (props) => {
 
     
     return (
-        <nav class="container h-100">
-            <div class="row h-100">
+        <nav class="container stepper h-100">
+            <div class="row stepper__row h-100">
                 <div className={`col step ${step1Styles()}`} >
                     <h5 class="step-number">STEP 01</h5>
                     <span class="step-name">Personal Details</span>

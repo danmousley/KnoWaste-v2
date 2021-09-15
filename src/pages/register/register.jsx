@@ -16,7 +16,9 @@ const Register = () => {
         // console.log(updatedFormData)
         // updatedFormData.push(data)
         // setFormData(updatedFormData)
-        setName(data.firstName);
+        if (!name) {
+            setName(data.firstName);
+        }
         if (formStep === 1 || formStep === 2) {
             let newStep = formStep + 1
             setFormStep(newStep)
@@ -58,11 +60,6 @@ const Register = () => {
         console.log(step)
         setFormStep(step)
     }
-
-    // useEffect(() => {
-    //     getTitle()
-    //     getForm()
-    // }, [formStep])
 
     return (
         <>

@@ -1,8 +1,8 @@
 @import "../../../variables.scss";
 
 .form {
-    height: 40vh;
-    margin-bottom: 5vh;
+    height: 45vh;
+    padding-bottom: 5vh;
     // border: 2px solid black;
 
     &__row {
@@ -12,16 +12,20 @@
 
     &__label {
         color: $text-color;
+        font-weight: bold;
         font-size: 0.9rem;
     }
 
     &__input {
         width: 100%;
-        color: $text-color;
+        margin: 0;
+        height: 50%;
+        color: $secondary-color;
         border: none;
         background-color: $tertiary-color;
-        padding: 1%;
-        font-size: 0.8rem;
+        padding: 5px 15px;
+        font-size: 0.9rem;
+        font-weight: bold;
     }
 
     &__error-message {
@@ -42,6 +46,7 @@
 }
 
 .button--form {
-    padding: 1% 2%;
-    margin: auto;
+    padding: 1% 4%;
+    margin-right: 2%;
+    font-weight: bold;
 }
