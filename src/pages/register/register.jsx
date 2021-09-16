@@ -8,7 +8,7 @@ import { Alert } from 'bootstrap';
 import { useHistory } from 'react-router';
 
 const Register = () => {
-    const [formStep, setFormStep] = useState(3);
+    const [formStep, setFormStep] = useState(1);
     const [formData, setFormData] = useState([]);
     const [name, setName] = useState([]);
 
