@@ -6,7 +6,7 @@ import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
 const LogInForm = (props) => {
     const loginForm = useRef(null)
     const loginButton = useRef(null)
-    const { checkFormIsValid, handleLogin } = props;
+    const { checkFormIsValid, handleLogin, handleSignUp } = props;
 
     const { register, handleSubmit } = useForm();
     
@@ -42,14 +42,14 @@ const LogInForm = (props) => {
                             <span class="login-form__feedback">Please enter a valid password</span>
                         </div>
                         <InputFeedback />
-                        <a>Forgotten your password?</a>
+                        <a class="login-form__forgotten">Forgotten your password?</a>
                     </div>
                 </div>
                 <div class="login-buttons container">
                     <div class="row h-100">
                         <div class="col my-auto p-0">
-                            <button type="button" class="btn btn-secondary button--form" >Sign Up</button>
-                            <button type="submit" ref= { loginButton } class="btn btn-primary button--form" disabled >Log In</button>
+                            <button type="button" onClick={ handleSignUp } class="btn btn-secondary button--login-form" >Sign Up</button>
+                            <button type="submit" ref= { loginButton } class="btn btn-primary button--login-form" disabled >Log In</button>
                         </div>
                     </div>
                 </div>

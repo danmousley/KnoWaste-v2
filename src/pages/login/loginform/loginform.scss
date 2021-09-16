@@ -56,23 +56,32 @@
         @media only screen and (max-width: 768px) {
             font-size: 0.5rem;
         }
+    }
 
+    &__forgotten {
+        font-size: 0.6rem;
+        color: $secondary-light;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 
 .login-buttons {
     height: 10vh;
-    margin-top: 2%;
+    margin-top: 5%;
 
 }
 
-.button--form {
-    padding: 1% 4%;
-    margin-right: 2%;
+.button--login-form {
+    padding: 2% 4%;
+    margin-right: 5%;
     font-weight: bold;
+    font-size: 0.9rem;
 
     @media only screen and (max-width: 768px) {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         
     }
 }

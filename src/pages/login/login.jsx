@@ -5,9 +5,16 @@ import LogInForm from './loginform/loginform';
 
 const LogIn = () => {
     const logInButton = useRef(null)
+    const history = useHistory()
 
     const handleLogin = () => {
-        console.log("login")
+        let path = "/dashboard"
+        history.push(path)
+    }
+
+    const handleSignUp = () => {
+        let path = "/register"
+        history.push(path)
     }
 
     const checkFormIsValid = (e, form, formSubmit) => {
@@ -27,7 +34,7 @@ const LogIn = () => {
                     <h2 class="login__titleText"> Welcome Back!! 👋 </h2>
                 </header>
                 <main class="login__form">
-                    <LogInForm checkFormIsValid={checkFormIsValid} handleLogin={handleLogin} />
+                    <LogInForm checkFormIsValid={checkFormIsValid} handleSignUp={handleSignUp} handleLogin={handleLogin} />
                 </main>
             </div>
         </>
