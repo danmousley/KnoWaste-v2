@@ -5,6 +5,9 @@
     min-height: 45vh;
     padding-bottom: 5vh;
     // border: 1px solid black;
+    @media only screen and (max-width: 768px) {
+        padding-bottom: 3vh;
+    }
 
     &__row {
         height: auto;
@@ -15,6 +18,14 @@
     &__label {
         color: $text-color;
         font-size: 0.9rem;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+        }
+
+        @media only screen and (max-width: 600px) {
+            font-size: 0.7rem;
+        }
     }
 
     &__input {
@@ -33,6 +44,12 @@
         -webkit-appearance: none;
         margin: 0;
         }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+            height: 4vh;
+        }
+
     }
 
     // &__error-message {
@@ -46,13 +63,20 @@
         font-size: 0.7rem;
         margin: 0;
         padding: 0;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.5rem;
+        }
     }
     
 }
 
 .buttons {
     height: 10vh;
-    // border: 1px solid red;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 0.8rem;
+    }
 }
 
 .button--form {

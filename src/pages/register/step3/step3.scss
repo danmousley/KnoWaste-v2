@@ -4,7 +4,11 @@
     height: auto;
     min-height: 48vh;
     padding-bottom: 5vh;
+    font-size: 0.9rem;
     // border: 1px solid black;
+    @media only screen and (max-width: 768px) {
+        padding-bottom: 5vh;
+    }
 
     &__title {
         font-weight: bold;
@@ -22,6 +26,10 @@
         font-size: 0.9rem;
         color: $secondary-light;
         padding: 0 0;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+        }
     }
 
     &__terms-label {
@@ -29,21 +37,32 @@
         font-weight: bold;
         font-size: 0.9rem;
         padding: 0 1%;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+        }
     }
 
     &__optin-label {
         color: $secondary-light;
         font-size: 0.9rem;
         padding: 0 1%;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+        }
     }
     
 }
 
 .buttons {
     height: 10vh;
-    // border: 1px solid red;
     margin: auto 0;
     padding: 0;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 0.8rem;
+    }
 }
 
 .button--form {

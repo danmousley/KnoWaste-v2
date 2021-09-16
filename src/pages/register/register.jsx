@@ -7,7 +7,7 @@ import './register.scss';
 import { useHistory } from 'react-router';
 
 const Register = () => {
-    const [formStep, setFormStep] = useState(1);
+    const [formStep, setFormStep] = useState(3);
     // const [formData, setFormData] = useState([]);
     const [name, setName] = useState([]);
 

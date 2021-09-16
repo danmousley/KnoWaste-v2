@@ -5,6 +5,9 @@
     min-height: 45vh;
     padding-bottom: 5vh;
     // border: 1px solid black;
+    @media only screen and (max-width: 768px) {
+        padding-bottom: 3vh;
+    }
 
     &__row {
         height: 25%;
@@ -15,6 +18,11 @@
         color: $text-color;
         font-weight: bold;
         font-size: 0.9rem;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+        }
+
     }
 
     &__input {
@@ -33,6 +41,11 @@
         -webkit-appearance: none;
         margin: 0;
         }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+            height: 4vh;
+        }
     }
 
     // &__error-message {
@@ -46,6 +59,11 @@
         font-size: 0.7rem;
         margin: 0;
         padding: 0;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.5rem;
+        }
+
     }
 }
 
@@ -62,4 +80,9 @@
     padding: 1% 4%;
     margin-right: 2%;
     font-weight: bold;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 0.8rem;
+        
+    }
 }
