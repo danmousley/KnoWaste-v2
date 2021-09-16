@@ -1,11 +1,36 @@
-import React from 'react';
-import styles from './login.scss';
+import React, { useState, useRef } from 'react';
+import './login.scss';
+import { useHistory } from 'react-router';
+import LogInForm from './loginform/loginform';
 
 const LogIn = () => {
+    const logInButton = useRef(null)
+
+    const handleLogin = () => {
+        console.log("login")
+    }
+
+    const checkFormIsValid = (e, form, formSubmit) => {
+        form.current.classList.add('was-validated')
+        console.log(e.target.classList)
+        if (form.current.checkValidity()) {
+            formSubmit.current.disabled = false
+        } else {
+            formSubmit.current.disabled = true
+        }
+    }
+
     return (
-        <div>
-            Login page under construction
-        </div>
+        <>
+            <div class="container login">
+                <header class="login__title">
+                    <h2 class="login__titleText"> Welcome Back!! 👋 </h2>
+                </header>
+                <main class="login__form">
+                    <LogInForm checkFormIsValid={checkFormIsValid} handleLogin={handleLogin} />
+                </main>
+            </div>
+        </>
     )
 }
 

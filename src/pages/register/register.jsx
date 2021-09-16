@@ -76,7 +76,7 @@ const Register = () => {
 
     return (
         <>
-            <body class="container register">
+            <div class="container register">
                 <header class="register__title">
                     <h2 class="register__titleText"> { getTitle() } </h2>
                 </header>
@@ -86,7 +86,7 @@ const Register = () => {
                 <main class="form">
                     { getForm() }
                 </main>
-            </body>
+            </div>
         </>
     )
 }

@@ -1,0 +1,78 @@
+@import "../../../assets/styles/variables";
+
+.login-form {
+    height: auto;
+    min-height: 60vh;
+    padding-bottom: 7vh;
+
+    @media only screen and (max-width: 768px) {
+        padding-bottom: 3vh;
+    }
+
+    &__row {
+        height: 33%;
+        padding: 2% 0;
+    }
+
+    &__label {
+        color: $text-color;
+        font-weight: bold;
+        font-size: 0.9rem;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+        }
+
+    }
+
+    &__input {
+        width: 100%;
+        margin: 0;
+        height: 40%;
+        color: $secondary-light;
+        border: none;
+        background-color: $tertiary-color;
+        padding: 5px 15px;
+        font-size: 0.8rem;
+        font-weight: bold;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.7rem;
+            height: 4vh;
+        }
+    }
+
+    &__feedback {
+        font-size: 0.7rem;
+        margin: 0;
+        padding: 0;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.5rem;
+        }
+
+    }
+}
+
+.login-buttons {
+    height: 10vh;
+    margin-top: 2%;
+
+}
+
+.button--form {
+    padding: 1% 4%;
+    margin-right: 2%;
+    font-weight: bold;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 0.8rem;
+        
+    }
+}
