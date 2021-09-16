@@ -28,7 +28,7 @@ const Step2 = (props) => {
                 <div class="row form__row">
                     <div class="col">
                         <h6 class="form__label">Student No</h6>
-                        <input {...register("studentNo", { required: true })} type="number" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
+                        <input {...register("studentNo", { required: true })} type="number" min="0" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please enter a valid student number</span>
                         </div>

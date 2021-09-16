@@ -27,6 +27,12 @@
         padding: 5px 15px;
         font-size: 0.9rem;
         font-weight: bold;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
     }
 
     // &__error-message {
