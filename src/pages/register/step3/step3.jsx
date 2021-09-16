@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
-import styles from './step3.scss';
+import './step3.scss';
 import { useForm } from "react-hook-form";
 
 const Step3 = (props) => {
     const {handlePreviousClick, onSubmit, checkFormIsValid} = props;
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { handleSubmit } = useForm();
     const step3Form = useRef(null)
     const step3Submit = useRef(null)
 
@@ -26,7 +26,7 @@ const Step3 = (props) => {
                 </div>
                 <div class="form-check py-2 px-4">
                     <input class="form-check-input" type="checkbox" onClick={(e) => checkFormIsValid(e, step3Form, step3Submit)} required/>
-                    <label class="form-check-label form__terms-label" for="flexCheckDefault">
+                    <label class="form-check-label form__terms-label" >
                         By ticking this box, you have acknoledged that you have read and agree to our terms and conditions.
                     </label>
                     <div class="invalid-feedback">
@@ -35,7 +35,7 @@ const Step3 = (props) => {
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox"/>
-                    <label class="form__optin-label" for="flexCheckChecked">
+                    <label class="form__optin-label">
                         Opt-in to receive emails regarding any further announcements or information regarding new features or Knowaste products.
                     </label>
                 </div>

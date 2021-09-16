@@ -7,6 +7,10 @@
     margin-bottom: 10vh;
     // border: 1px solid black;
 
+    @media only screen and (min-width: 768px) {
+        
+    }
+
     &__title {
         height: 15vh;
         padding: 2% 0;

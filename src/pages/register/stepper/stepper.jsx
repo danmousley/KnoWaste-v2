@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './stepper.scss';
+import './stepper.scss';
 
 const Stepper = (props) => {
     const {formStep, handleStepper} = props;

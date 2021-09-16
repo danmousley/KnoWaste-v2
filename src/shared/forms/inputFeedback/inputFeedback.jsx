@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './inputFeedback.scss'
+import './inputFeedback.scss';
 
 const InputFeedback = () => {
     return (

@@ -1,17 +1,17 @@
-import React, { useRef } from 'react'
-import styles from './step1.scss'
+import React, { useRef } from 'react';
+import './step1.scss';
 import { useForm } from "react-hook-form";
 import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
 
 const Step1 = (props) => {
     const {onSubmit, checkFormIsValid} = props;
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const step1Form = useRef(null)
     const step1Submit = useRef(null)
 
     return (
         <>
-            <form class="needs-validation" ref={step1Form} onSubmit={handleSubmit(onSubmit)} novalidate>
+            <form class="needs-validation" ref={step1Form} onSubmit={handleSubmit(onSubmit)} noValidate>
                 <section class="container form">
                     <div class="row form__row">
                         <div class="col">
@@ -54,7 +54,7 @@ const Step1 = (props) => {
                     <div class="row form__row">
                         <div class="col">
                             <h6 class="form__label">Mobile Number</h6>
-                            <input {...register("mobileNo", { required: true })} type="text" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" minlength="4" maxlength="16" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" required />
+                            <input {...register("mobileNo", { required: true })} type="text" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" minLength="4" maxLength="16" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" required />
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid mobile without spaces</span>
                             </div>

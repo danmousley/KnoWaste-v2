@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import styles from './step2.scss';
+import './step2.scss';
 import { useForm } from "react-hook-form";
 import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
 
 const Step2 = (props) => {
     const {handlePreviousClick, onSubmit, checkFormIsValid} = props;
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit } = useForm();
     const step2Form = useRef(null)
     const step2Submit = useRef(null)
 
