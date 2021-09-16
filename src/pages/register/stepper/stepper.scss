@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+@import "../../../assets/styles/variables";
 
 .stepper {
     height: 8vw;
@@ -55,10 +55,10 @@
 }
 
 .active {
-    border-top-color: $primary-color;
+    border-top-color: $secondary;
 
     .step-name {
-        color: $primary-color;
+        color: $secondary;
     }
 }
 

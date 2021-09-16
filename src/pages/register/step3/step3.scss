@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+@import "../../../assets/styles/variables";
 
 .form {
     height: auto;
@@ -20,19 +20,19 @@
 
     &__terms {
         font-size: 0.9rem;
-        color: $secondary-color;
+        color: $secondary-light;
         padding: 0 0;
     }
 
     &__terms-label {
-        color: $primary-color;
+        color: $secondary;
         font-weight: bold;
         font-size: 0.9rem;
         padding: 0 1%;
     }
 
     &__optin-label {
-        color: $secondary-color;
+        color: $secondary-light;
         font-size: 0.9rem;
         padding: 0 1%;
     }

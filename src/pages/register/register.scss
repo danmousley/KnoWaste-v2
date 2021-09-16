@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+@import "../../assets/styles/variables";
 
 .register {
     width: 52vw;
@@ -10,12 +10,12 @@
     &__title {
         height: 15vh;
         padding: 2% 0;
-        color: $primary-color;
+        color: $secondary;
         
     }
 
     &__titleText {
-        color: $primary-color;
+        color: $secondary;
         font-size: 2.5rem;
         font-weight: bold;
     }
