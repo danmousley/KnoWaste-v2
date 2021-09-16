@@ -13,7 +13,7 @@ const Step3 = (props) => {
         <form ref={ step3Form } onSubmit={handleSubmit(onSubmit)}>
             <section class="form">
                 <h5 class="form__title">Our Terms & Conditions</h5>
-                <div class="form__termsContainer">
+                <div class="form__terms-container">
                     <p class="form__terms">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, 
                         atque. Nesciunt alias voluptas hic quidem sit voluptate tempora ad voluptates 
@@ -26,7 +26,7 @@ const Step3 = (props) => {
                 </div>
                 <div class="form-check py-2 px-4">
                     <input class="form-check-input" type="checkbox" onClick={(e) => checkFormIsValid(e, step3Form, step3Submit)} required/>
-                    <label class="form-check-label form__termsLabel" for="flexCheckDefault">
+                    <label class="form-check-label form__terms-label" for="flexCheckDefault">
                         By ticking this box, you have acknoledged that you have read and agree to our terms and conditions.
                     </label>
                     <div class="invalid-feedback">
@@ -35,7 +35,7 @@ const Step3 = (props) => {
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox"/>
-                    <label class="form__optinLabel" for="flexCheckChecked">
+                    <label class="form__optin-label" for="flexCheckChecked">
                         Opt-in to receive emails regarding any further announcements or information regarding new features or Knowaste products.
                     </label>
                 </div>
