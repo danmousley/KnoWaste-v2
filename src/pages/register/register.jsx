@@ -40,11 +40,11 @@ const Register = () => {
         }
     }
 
-    const handleStepper = (e) => {
-        // if (e.target.value < formStep) {
-        //     console.log(e.target.value)
-        //     setFormStep(e.target.value)
-        // }
+    const handleStepper = (e, step) => {
+        if (step < formStep) {
+            console.log(step)
+            setFormStep(step)
+        }
     }
 
     const handlePreviousClick = (e) => {
