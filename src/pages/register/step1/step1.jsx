@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import styles from './step1.scss'
 import { useForm } from "react-hook-form";
+import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
 
 const Step1 = (props) => {
     const {onSubmit} = props;
@@ -29,9 +30,7 @@ const Step1 = (props) => {
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid first name</span>
                             </div>
-                            <div class="valid-feedback">
-                                <span class="form__feedback">Looks good!</span>
-                            </div>
+                            <InputFeedback />
                         </div>
                         <div class="col">
                             <h6 class="form__label">Last Name</h6>
@@ -39,9 +38,7 @@ const Step1 = (props) => {
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid last name</span>
                             </div>
-                            <div class="valid-feedback">
-                                <span class="form__feedback">Looks good!</span>
-                            </div>
+                            <InputFeedback />
                         </div>
                     </div>
                     <div class="row form__row">
@@ -51,9 +48,7 @@ const Step1 = (props) => {
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid email</span>
                             </div>
-                            <div class="valid-feedback">
-                                <span class="form__feedback">Looks good!</span>
-                            </div>
+                            <InputFeedback />
                         </div>
                     </div>
                     <div class="row form__row">
@@ -63,9 +58,7 @@ const Step1 = (props) => {
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid date of birth</span>
                             </div>
-                            <div class="valid-feedback">
-                                <span class="form__feedback">Looks good!</span>
-                            </div>
+                            <InputFeedback />
                         </div>
                     </div>
                     <div class="row form__row">
@@ -75,9 +68,7 @@ const Step1 = (props) => {
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid mobile</span>
                             </div>
-                            <div class="valid-feedback">
-                                <span class="form__feedback">Looks good!</span>
-                            </div>
+                            <InputFeedback />
                         </div>
                     </div>
                 </section>

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import styles from './step2.scss';
 import { useForm } from "react-hook-form";
+import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
 
 const Step2 = (props) => {
     const {handlePreviousClick, onSubmit} = props;
@@ -31,9 +32,7 @@ const Step2 = (props) => {
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please select your halls</span>
                         </div>
-                        <div class="valid-feedback">
-                            <span class="form__feedback">Looks good!</span>
-                        </div>
+                        <InputFeedback />
                     </div>
                 </div>
                 <div class="row form__row">
@@ -43,9 +42,7 @@ const Step2 = (props) => {
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please enter a valid student number</span>
                         </div>
-                        <div class="valid-feedback">
-                            <span class="form__feedback">Looks good!</span>
-                        </div>
+                        <InputFeedback />
                     </div>
                 </div>
                 <div class="row form__row">
@@ -55,9 +52,7 @@ const Step2 = (props) => {
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please enter a valid password</span>
                         </div>
-                        <div class="valid-feedback">
-                            <span class="form__feedback">Looks good!</span>
-                        </div>
+                        <InputFeedback />
                     </div>
                 </div>
                 <div class="row form__row">
@@ -67,9 +62,7 @@ const Step2 = (props) => {
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please confirm your password</span>
                         </div>
-                        <div class="valid-feedback">
-                            <span class="form__feedback">Looks good!</span>
-                        </div>
+                        <InputFeedback />
                     </div>
                 </div>
             </section>
