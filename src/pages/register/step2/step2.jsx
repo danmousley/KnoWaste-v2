@@ -19,7 +19,6 @@ const Step2 = (props) => {
     }
 
     return (
-        <>
         <form ref={step2Form} onSubmit={handleSubmit(onSubmit)}>
             <section class="container form">
                 <div class="row form__row">
@@ -83,7 +82,6 @@ const Step2 = (props) => {
                 </div>
             </div>
         </form>
-        </>
     )
 }
 
