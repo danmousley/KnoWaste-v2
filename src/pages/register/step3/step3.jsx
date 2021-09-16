@@ -3,19 +3,10 @@ import styles from './step3.scss';
 import { useForm } from "react-hook-form";
 
 const Step3 = (props) => {
-    const {handlePreviousClick, onSubmit} = props;
+    const {handlePreviousClick, onSubmit, checkFormIsValid} = props;
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const step3Form = useRef(null)
     const step3Submit = useRef(null)
-
-    const checkFormIsValid = (e) => {
-        step3Form.current.classList.add('was-validated')
-        if (step3Form.current.checkValidity()) {
-            step3Submit.current.disabled = false
-        } else {
-            step3Submit.current.disabled = true
-        }
-    }
 
     return (
         <>
@@ -34,7 +25,7 @@ const Step3 = (props) => {
                     </p>
                 </div>
                 <div class="form-check py-2 px-4">
-                    <input class="form-check-input" type="checkbox" onClick={(e) => checkFormIsValid(e)} required/>
+                    <input class="form-check-input" type="checkbox" onClick={(e) => checkFormIsValid(e, step3Form, step3Submit)} required/>
                     <label class="form-check-label form__termsLabel" for="flexCheckDefault">
                         By ticking this box, you have acknoledged that you have read and agree to our terms and conditions.
                     </label>

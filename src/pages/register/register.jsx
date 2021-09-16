@@ -4,7 +4,6 @@ import Step2 from './step2/step2';
 import Step3 from './step3/step3';
 import Stepper from './stepper/stepper';
 import styles from './register.scss';
-import { Alert } from 'bootstrap';
 import { useHistory } from 'react-router';
 
 const Register = () => {
@@ -13,6 +12,16 @@ const Register = () => {
     const [name, setName] = useState([]);
 
     const history = useHistory()
+
+    const checkFormIsValid = (e, form, formSubmit) => {
+        form.current.classList.add('was-validated')
+        console.log(e.target.classList)
+        if (form.current.checkValidity()) {
+            formSubmit.current.disabled = false
+        } else {
+            formSubmit.current.disabled = true
+        }
+    }
 
     const onSubmit = (data) => {
         console.log(data)
@@ -56,11 +65,11 @@ const Register = () => {
 
     const getForm = () => {
         if (formStep === 1) {
-            return <Step1 onSubmit={onSubmit}/>
+            return <Step1 checkFormIsValid={checkFormIsValid} onSubmit={onSubmit}/>
         } else if (formStep === 2) {
-            return <Step2 onSubmit={onSubmit} handlePreviousClick={ handlePreviousClick }/>
+            return <Step2 checkFormIsValid={checkFormIsValid} onSubmit={onSubmit} handlePreviousClick={ handlePreviousClick }/>
         } else if (formStep === 3) {
-            return <Step3 onSubmit={onSubmit} handlePreviousClick={ handlePreviousClick }/>
+            return <Step3 checkFormIsValid={checkFormIsValid} onSubmit={onSubmit} handlePreviousClick={ handlePreviousClick }/>
         }
     }
 
