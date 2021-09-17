@@ -43,7 +43,7 @@ const LogInForm = (props) => {
                             <span class="login-form__feedback">Please enter a valid password</span>
                         </div>
                         <InputFeedback />
-                        <Link to="/forgotpassword"><a class="login-form__forgotten">Forgotten your password?</a></Link>
+                        <Link to="/forgotpassword" style={{ textDecoration: 'none' }}><span class="login-form__forgotten">Forgotten your password?</span></Link>
                     </div>
                 </div>
                 <div class="login-buttons container">

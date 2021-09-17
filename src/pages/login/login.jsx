@@ -1,10 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import './login.scss';
 import { useHistory } from 'react-router';
 import LogInForm from './loginform/loginform';
 
 const LogIn = () => {
-    const logInButton = useRef(null)
     const history = useHistory()
 
     const handleLogin = () => {

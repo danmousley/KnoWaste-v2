@@ -61,6 +61,8 @@
     &__forgotten {
         font-size: 0.6rem;
         color: $secondary-light;
+        text-decoration: underline;
+        text-decoration-color: $secondary-light;
 
         &:hover {
             cursor: pointer;
