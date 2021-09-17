@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import './loginform.scss';
+import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
 
@@ -42,7 +43,7 @@ const LogInForm = (props) => {
                             <span class="login-form__feedback">Please enter a valid password</span>
                         </div>
                         <InputFeedback />
-                        <a class="login-form__forgotten">Forgotten your password?</a>
+                        <Link to="/forgotpassword"><a class="login-form__forgotten">Forgotten your password?</a></Link>
                     </div>
                 </div>
                 <div class="login-buttons container">
