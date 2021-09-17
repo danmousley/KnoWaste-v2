@@ -1,12 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import './forgotpassword.scss';
 import { useHistory } from 'react-router';
 import ForgotPasswordForm from './forgotpasswordform/forgotpasswordform';
+import RequestSubmitted from './requestsubmitted/requestsubmitted';
 
 
 
 const ForgottenPassword = () => {
-    const [isFormSubmitted, setIsFormSubmitted] = useState(true);
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
     const history = useHistory()
 
@@ -14,13 +15,26 @@ const ForgottenPassword = () => {
         return isFormSubmitted ? "Your request has been submitted" : "Forgotten Your Password?";
     }
 
-    const handleSubmit = () => {
-        // change to new page
-        let path = "/dashboard"
-        history.push(path)
+    const getContent = () => {
+        return isFormSubmitted ? <RequestSubmitted handlePrevious={handlePrevious} handleLogin={handleLogin} /> : <ForgotPasswordForm onSubmit={onSubmit} handlePrevious={handlePrevious} checkFormIsValid={checkFormIsValid}/>;
+    }
+
+    const onSubmit = (data) => {
+        // use data to see if email and student no are in database
+        setIsFormSubmitted(true)
     }
 
     const handlePrevious = () => {
+        if (isFormSubmitted === false) {
+            console.log("previous works")
+            let path = "/login"
+            history.push(path)
+        } else {
+            setIsFormSubmitted(false)
+        }
+    }
+
+    const handleLogin = () => {
         let path = "/login"
         history.push(path)
     }
@@ -42,7 +56,7 @@ const ForgottenPassword = () => {
                     <h2 class="forgotten-password__titleText"> { getTitle() } </h2>
                 </header>
                 <main class="forgotten-password__form">
-                    <ForgotPasswordForm handleSubmit={handleSubmit} handlePrevious={handlePrevious} checkFormIsValid={checkFormIsValid}/>
+                    { getContent() }
                 </main>
             </div>
         </>

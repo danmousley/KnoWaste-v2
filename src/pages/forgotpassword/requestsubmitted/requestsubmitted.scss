@@ -1,0 +1,41 @@
+@import "../../../assets/styles/variables";
+
+.request-submitted {
+    height: auto;
+    min-height: 60vh;
+    padding-bottom: 7vh;
+
+    @media only screen and (max-width: 768px) {
+        padding-bottom: 3vh;
+    }
+
+    &__confirmation {
+        margin-top: 2%;
+        font-size: 1.1rem;
+        color: $secondary-light;
+        padding: 0 0;
+
+        @media only screen and (max-width: 768px) {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+
+.request-submitted-buttons {
+    height: 10vh;
+    margin-top: 5%;
+
+}
+
+.button--request-submitted-form {
+    padding: 2% 4%;
+    margin-right: 5%;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+    @media only screen and (max-width: 768px) {
+        font-size: 0.7rem;
+        
+    }
+}
