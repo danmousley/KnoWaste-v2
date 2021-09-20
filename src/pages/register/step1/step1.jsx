@@ -43,8 +43,8 @@ const Step1 = (props) => {
                     </div>
                     <div class="row form__row">
                         <div class="col">
-                            <h6 class="form__label">Date of birth</h6>
-                            <input {...register("dateOfBirth", { required: true })} type="date" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" required />
+                            <label for="dateOfBirth" class="form__label">Date of birth</label>
+                            <input {...register("dateOfBirth", { required: true })} type="date" id="dateOfBirth" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" required />
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid date of birth</span>
                             </div>
@@ -66,7 +66,7 @@ const Step1 = (props) => {
                 <div class="buttons container">
                     <div class="row h-100">
                         <div class="col my-auto">
-                            <button type="submit" ref={step1Submit} class="btn btn-primary button--form" disabled aria-disabled="true">Next</button>
+                            <button type="submit" ref={step1Submit} class="btn btn-primary button--form" disabled>Next</button>
                         </div>
                     </div>
                 </div>
