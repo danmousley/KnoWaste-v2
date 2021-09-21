@@ -27,7 +27,7 @@ const Step3 = (props) => {
                 <div class="form-check py-2 px-4">
                     <input class="form-check-input" type="checkbox" onClick={(e) => checkFormIsValid(e, step3Form, step3Submit)} required/>
                     <label class="form-check-label form__terms-label" >
-                        By ticking this box, you have acknoledged that you have read and agree to our terms and conditions.
+                        By ticking this box, you have acknowledged that you have read and agree to our terms and conditions.
                     </label>
                     <div class="invalid-feedback">
                         You must agree before submitting.
