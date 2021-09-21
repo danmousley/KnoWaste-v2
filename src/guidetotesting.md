@@ -40,6 +40,9 @@ React Testing Library encourages you to test your React components not too much 
         })
     })
 
+    We can then run the test in the console using:
+    npm test
+
 3. Accssing elements in the DOM
 
     If we include 'screen.debug()' in our test after Render, it will show us the html that is rendered for that component in the console.
