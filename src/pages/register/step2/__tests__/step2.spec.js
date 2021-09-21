@@ -12,36 +12,35 @@ describe('Step 2', () => {
 
     test('Inputs are valid on correct input', () => {
         render(<Step2 checkFormIsValid={jest.fn} />)
+
         let halls = screen.getByRole('combobox')
         let studentNo = screen.getByRole('spinbutton')
+        let createPassword = screen.getByLabelText('Create Password')
+        let confirmPassword = screen.getByLabelText('Confirm Password')
         userEvent.type(studentNo, "123456")
         userEvent.selectOptions(halls, screen.getByRole('option', {name: "Halls 2"}))
-        // userEvent.type(firstName, 'Dan');
-        // userEvent.click(inputs[1]);
-        userEvent.click(studentNo);
+        userEvent.type(createPassword, "password123")
+        userEvent.type(confirmPassword, "password123")
+
         expect(halls).toBeValid();
         expect(studentNo).toBeValid();
+        expect(createPassword).toBeValid();
+        expect(confirmPassword).toBeValid();
     })
 
     test('Inputs are invalid on incorrect input', () => {
+        
         render(<Step2 checkFormIsValid={jest.fn} />)
-        let halls = screen.getByRole('combobox')
         let studentNo = screen.getByRole('spinbutton')
+        let createPassword = screen.getByLabelText('Create Password')
+        let confirmPassword = screen.getByLabelText('Confirm Password')
         userEvent.type(studentNo, "")
-        // userEvent.type(firstName, 'Dan');
-        // userEvent.click(inputs[1]);
-        userEvent.click(halls);
-        expect(studentNo).toBeInvalid();
-    })
+        userEvent.type(createPassword, "")
+        userEvent.type(confirmPassword, "")
 
-    // test('Inputs are invalid on incorrect input', () => {
-    //     render(<Step2 checkFormIsValid={jest.fn} />)
-    //     let inputs = screen.getAllByRole('textbox')
-    //     let firstName = inputs[0]
-    //     userEvent.type(firstName, '@123');
-    //     userEvent.click(inputs[1]);
-    //     userEvent.click(firstName);
-    //     expect(firstName).toBeInvalid();
-    // })
+        expect(studentNo).toBeInvalid();
+        expect(createPassword).toBeInvalid();
+        expect(confirmPassword).toBeInvalid();
+    })
 
 })

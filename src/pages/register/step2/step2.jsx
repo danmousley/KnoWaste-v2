@@ -14,7 +14,7 @@ const Step2 = (props) => {
             <section class="container form">
                 <div class="row form__row">
                     <div class="col">
-                        <h6 class="form__label">Which Halls of Residence do you reside at?</h6>
+                        <label class="form__label">Which Halls of Residence do you reside at?</label>
                         <select {...register("halls", { required: true })} type="text" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required >
                             <option value="halls1">Halls 1</option>
                             <option value="halls2">Halls 2</option>                          
@@ -27,7 +27,7 @@ const Step2 = (props) => {
                 </div>
                 <div class="row form__row">
                     <div class="col">
-                        <h6 class="form__label">Student No</h6>
+                        <label class="form__label">Student No</label>
                         <input {...register("studentNo", { required: true })} type="number" min="0" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please enter a valid student number</span>
@@ -37,8 +37,8 @@ const Step2 = (props) => {
                 </div>
                 <div class="row form__row">
                     <div class="col">
-                        <h6 class="form__label">Create Password</h6>
-                        <input {...register("password", { required: true })} type="password" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
+                        <label htmlFor="createPassword" class="form__label">Create Password</label>
+                        <input id="createPassword" {...register("password", { required: true })} type="password" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please enter a valid password</span>
                         </div>
@@ -47,8 +47,8 @@ const Step2 = (props) => {
                 </div>
                 <div class="row form__row">
                     <div class="col">
-                    <h6 class="form__label">Confirm Password</h6>
-                        <input {...register("password", { required: true })} type="password" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
+                    <label htmlFor="confirmPassword" class="form__label">Confirm Password</label>
+                        <input id="confirmPassword" {...register("password", { required: true })} type="password" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please confirm your password</span>
                         </div>

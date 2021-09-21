@@ -18,6 +18,7 @@ describe('Step 3', () => {
         const optIn = checkboxes[1];
 
         userEvent.click(terms);
+        expect(optIn).toBeValid();
         expect(terms).toBeValid();
     })
 

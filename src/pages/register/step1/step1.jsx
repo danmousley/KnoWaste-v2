@@ -15,7 +15,7 @@ const Step1 = (props) => {
                 <section class="container form">
                     <div class="row form__row">
                         <div class="col">
-                            <h6 class="form__label">First Name</h6>
+                            <label class="form__label">First Name</label>
                             <input {...register("firstName", { required: true })} type="text" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" pattern="^[\p{L}]+$" required />
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid first name</span>
@@ -23,7 +23,7 @@ const Step1 = (props) => {
                             <InputFeedback />
                         </div>
                         <div class="col">
-                            <h6 class="form__label">Last Name</h6>
+                            <label class="form__label">Last Name</label>
                             <input {...register("lastName", { required: true })} type="text" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" pattern="^[\p{L}]+$" required />
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid last name</span>
@@ -33,7 +33,7 @@ const Step1 = (props) => {
                     </div>
                     <div class="row form__row">
                         <div class="col">
-                            <h6 class="form__label">Email Address</h6>
+                            <label class="form__label">Email Address</label>
                             <input {...register("email", { required: true })} type="email" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" required />
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid email</span>
@@ -43,7 +43,7 @@ const Step1 = (props) => {
                     </div>
                     <div class="row form__row">
                         <div class="col">
-                            <label for="dateOfBirth" class="form__label">Date of birth</label>
+                            <label htmlFor="dateOfBirth" class="form__label">Date of birth</label>
                             <input {...register("dateOfBirth", { required: true })} type="date" id="dateOfBirth" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" required />
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid date of birth</span>
@@ -53,7 +53,7 @@ const Step1 = (props) => {
                     </div>
                     <div class="row form__row">
                         <div class="col">
-                            <h6 class="form__label">Mobile Number</h6>
+                            <label class="form__label">Mobile Number</label>
                             <input {...register("mobileNo", { required: true })} type="text" onBlur={(e) => checkFormIsValid(e, step1Form, step1Submit)} class="form-control form__input" minLength="4" maxLength="16" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" required />
                             <div class="invalid-feedback">
                                 <span class="form__feedback">Please enter a valid mobile without spaces</span>

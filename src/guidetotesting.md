@@ -1,8 +1,8 @@
 In this project, we will be using React Testing Library and Jest to carry out our testing.
 
-React Testing Library is...similar to Enzyme...
+React Testing Library is a testing Library, similar to Enzyme, which is used to test React components. It should be used in conjunction with a testing framework such as Jest.
 
-Jest is..
+Jest is a testing framework and test runner which allows us to run tests from the command line and offersfunctions for test suites, test cases, and assertions.
 
 This file will provide a practical guide on how to get started using React Testing Library and Jest, however, if you are new to React Testing Library, I would highly recommend reading the below article. It starts with the basics of testing in React and provides an excellent tutorial of how to use both Jest and React Testing Library in your React project:
 
@@ -11,21 +11,38 @@ https://www.robinwieruch.de/react-testing-library
 React Testing Library encourages you to test your React components not too much in isolation, but in integration (integration test) with other components. Only this way, can you actually test whether state changes were applied in the DOM and whether side-effects took effect.
 
 1. Setup
-    Jest, React testing library
-    import { render, screen } from '@testing-library/react';
+    Jest and RTL should be installed after you run 'npm install', you can check in the package.json if this is the case. If not you can use:
+    - RTL: npm install --save-dev @testing-library/dom
+    - Jest: npm install --save-dev jest
+
+    In each test file, you will need to import React, any components you are testing in that file, as well as any libraries or hooks you are using. The most common are:
+
+    import React from "react";
+    import { render, screen, fireEvent } from "@testing-library/react";
+    import userEvent from '@testing-library/user-event';
 
 2. Testing structure
     Testing shouldn't concern itself with the internal implementation details of a component, like state, but rather the way the software is used and interacted with by a user.
 
-    screen.debug()
-
     Test Block:
     - Render a component we want to test
-    - Find elements we want to interct with
-    - Interact with those elements
+    - Find elements we want to interct with (see section 3)
+    - Interact with those elements (see section 4 & 5)
     - Assert that the results are as expected
 
-3. Accssing elements in the DOM. 
+    Example:
+    describe('Register', () => {
+        test('Check that the title for step 1 is rendered on page load', () => {
+            render(<Register />)
+
+            const nextButton = screen.getByRole('button', {name: /Next/i})
+            expect(nextButton).toBeEnabled();
+        })
+    })
+
+3. Accssing elements in the DOM
+
+    If we include 'screen.debug()' in our test after Render, it will show us the html that is rendered for that component in the console.
 
     Most common and favourable methods:
         getByText - Use text (specific) or RegEx to find elelments
@@ -90,13 +107,23 @@ React Testing Library encourages you to test your React components not too much 
 
 6. Mock Functions - Callback Handlers
 
-- Declare a mock function:
-    const onChange = jest.fn();
-- Trigger a user event (see section 5):
-    await userEvent.type(screen.getByRole('textbox'), 'Sample input');
-- Assert that the callback function has been called:
-    expect(onChange).toHaveBeenCalledTimes(12);
+    - Declare a mock function:
+        const onChange = jest.fn();
+    - Trigger a user event (see section 5):
+        await userEvent.type(screen.getByRole('textbox'), 'Sample input');
+    - Assert that the callback function has been called:
+        expect(onChange).toHaveBeenCalledTimes(12);
 
-This shows there has been 12 changes on typing each key. If we used fireEvent, it would have only been called 1 time as it only recognises 1 change for the overall event.
+    This shows there has been 12 changes on typing each key. If we used fireEvent, it would have only been called 1 time as it only recognises 1 change for the overall event.
 
 7. Testing APIs
+
+    If carrying a component where an API is used or a state change takes place, we will need to use an asynchronous function, by including async in the test line, as below:
+
+    test('renders App component', async () => {...}
+
+    We may also need to use findBy instead of getBy (see above) and/or include await before any lines of code that need to wait for something to happen before we can check it is there (such as a state change or API call).
+
+    For example, I triggered a state change in one of my tests, and had to wait for it to occur before testing if an element was in the DOM, so I used:
+
+    expect(await screen.findByText(/create password/i)).toBeInTheDocument();
