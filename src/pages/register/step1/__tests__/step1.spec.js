@@ -12,22 +12,24 @@ describe('Step 1', () => {
         screen.debug();
     })
 
-    // test('Form validation', () => {
+    test('Inputs are valid on correct input', () => {
+        render(<Step1 checkFormIsValid={jest.fn} />)
+        let inputs = screen.getAllByRole('textbox')
+        let firstName = inputs[0]
+        userEvent.type(firstName, 'Dan');
+        userEvent.click(inputs[1]);
+        userEvent.click(firstName);
+        expect(firstName).toBeValid();
+    })
 
-
-    //     border-color: #198754
-    // })
-    // test('CheckFormIsValid runs when input blurred', async () => {
-    //     const onBlur = jest.fn();
-    //     render(<Step1 onBlur={onBlur} />)
-    //     let inputs = screen.getAllByRole('textbox')
-    //     let firstName = inputs[0]
-
-    //     userEvent.click(firstName);
-    //     userEvent.click(inputs[1]);
-
-    //     expect(onBlur).toHaveBeenCalled();
-
-    // })
+    test('Inputs are invalid on incorrect input', () => {
+        render(<Step1 checkFormIsValid={jest.fn} />)
+        let inputs = screen.getAllByRole('textbox')
+        let firstName = inputs[0]
+        userEvent.type(firstName, '@123');
+        userEvent.click(inputs[1]);
+        userEvent.click(firstName);
+        expect(firstName).toBeInvalid();
+    })
 
 })
