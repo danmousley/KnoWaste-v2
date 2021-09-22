@@ -20,7 +20,7 @@ const NavBar = () => {
       <div className='nav__title'>
         <div className='logo'>
           <img className='logo__img' src={logo}/>
-          <h1>Knowaste</h1>
+          <h1 className="logo__h1">Knowaste</h1>
         </div>
         <div className='nav__icon-container'>
           <FontAwesomeIcon className='nav__close nav__icon' icon={faTimes} size='2x' onClick={handleClick}/>

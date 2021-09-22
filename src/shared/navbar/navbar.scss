@@ -8,11 +8,16 @@
   display: flex;
   justify-content: space-between;
   font-family: $font-family-base;
+  padding: 0 $base-spacing * 4;
 
   .logo {
     align-items: center;
     display: flex;
 
+    &__h1 {
+      font-weight: $font-bold;
+    }
+    
     &__img {
       margin-right: $base-spacing * 2;
     }
@@ -35,7 +40,7 @@
   &__link {
     list-style-type: none;
     padding: $base-spacing * 2;
-
+    
     a:not(.btn) {
       color: $secondary;
       text-decoration: none;
@@ -56,9 +61,8 @@
     display: none;
   }
 
-  @media(max-width: 599px) {
+  @media(max-width: 674px) {
     &.mobile-visible {
-      // flex-direction: column;
       display: block;
 
       .nav__links {
@@ -77,9 +81,7 @@
   }
 }
 
-
-
-@media (min-width: 600px) {
+@media (min-width: 675px) {
   .nav {
     &__icon-container {
       display: none;
@@ -89,7 +91,35 @@
       align-items: center;
       display: flex;
       justify-content: space-around;
+      margin-left: $base-spacing * 4;
+
+    &:first-child {
+      margin-left: 0;
     }
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .nav {
+    padding: 0 $base-spacing * 2;
+    
+    &__links {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+      margin-left: $base-spacing * 2;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .nav {
+    padding: 0 100px;
   }
 }
 
