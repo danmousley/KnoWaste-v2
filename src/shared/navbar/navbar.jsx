@@ -9,7 +9,7 @@ const NavBar = () => {
   
   const [ isNavOpen, setIsNavOpen ] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     setIsNavOpen(!isNavOpen);
   }
 
@@ -27,9 +27,9 @@ const NavBar = () => {
         </div>
       </div>
       <ul className='nav__links'>
-        <li className='nav__link'><a href=''>How it works?</a></li>
-        <li className='nav__link'><a href=''>Admin</a></li>
-        <li className='nav__link'><a href='' class='btn btn-primary'>Login</a></li>
+        <li className='nav__link'><a href='#'>How it works?</a></li>
+        <li className='nav__link'><a href='#'>Admin</a></li>
+        <li className='nav__link'><a href='#' class='btn btn-primary'>Login</a></li>
       </ul>
       <div className='nav__icon-container'>
         <FontAwesomeIcon className='nav__hamburger nav__icon' icon={faBars} size='3x' onClick={handleClick}/>
