@@ -1,24 +1,40 @@
 @use '../../assets/styles/variables' as *;
 
 .nav {
+  align-items: center;
   background-image: url('../../assets/images/background.png');
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  justify-content: space-between;
   font-family: $font-family-base;
 
+  .logo {
+    align-items: center;
+    display: flex;
+
+    &__img {
+      margin-right: $base-spacing * 2;
+    }
+  }
+  
   &__title {
+    align-items: center;
     color: $secondary;
+    display: flex;
     font-weight: 800;
-    margin-left: 20px;
+    justify-content: space-between;
+    padding: $base-spacing *2;
   }
   
   &__links {
+    display: none;
     margin: 0;
   }
 
   &__link {
-
     list-style-type: none;
+    padding: $base-spacing * 2;
 
     a:not(.btn) {
       color: $secondary;
@@ -30,5 +46,51 @@
       padding-right: 30px;
     }
   }
+
+  &__hamburger {
+    color: $secondary;
+    padding-right: $base-spacing * 2;
+  }
+
+  &__close {
+    display: none;
+  }
+
+  @media(max-width: 599px) {
+    &.mobile-visible {
+      // flex-direction: column;
+      display: block;
+
+      .nav__links {
+        display: block;
+        padding-left: $base-spacing * 2;
+      }
+      
+      .nav__hamburger {
+        display: none;
+      }
+
+      .nav__close {
+        display: block;
+      }
+    }
+  }
 }
+
+
+
+@media (min-width: 600px) {
+  .nav {
+    &__icon-container {
+      display: none;
+    }
+
+    &__links {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
 
