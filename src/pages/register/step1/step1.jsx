@@ -1,13 +1,26 @@
 import React, { useRef } from 'react';
 import './step1.scss';
 import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
+import * as yup from "yup";
 
 const Step1 = (props) => {
     const {onSubmit, checkFormIsValid} = props;
-    const { register, handleSubmit } = useForm();
     const step1Form = useRef(null)
     const step1Submit = useRef(null)
+
+    const schema = yup.object().shape({
+        firstName: yup.string().required(),
+        lastName: yup.string().required(),
+        email: yup.string().required(),
+        dateOfBirth: yup.string().required(),
+        mobileNo: yup.number().required(),
+    })
+
+    const { register, handleSubmit } = useForm({
+        resolver: yupResolver(schema),
+    });
 
     return (
         <>

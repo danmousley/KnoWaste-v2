@@ -1,13 +1,25 @@
 import React, { useRef } from 'react';
 import './step2.scss';
 import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
+import * as yup from "yup";
 
 const Step2 = (props) => {
     const {handlePreviousClick, onSubmit, checkFormIsValid} = props;
-    const { register, handleSubmit } = useForm();
+    
     const step2Form = useRef(null)
     const step2Submit = useRef(null)
+
+    const schema = yup.object().shape({
+        halls: yup.string().required(),
+        studentNo: yup.number().required(),
+        password: yup.string().required(),
+    })
+
+    const { register, handleSubmit } = useForm({
+        resolver: yupResolver(schema),
+    });
 
     return (
         <form ref={step2Form} onSubmit={handleSubmit(onSubmit)}>
@@ -48,7 +60,7 @@ const Step2 = (props) => {
                 <div class="row form__row">
                     <div class="col">
                     <label htmlFor="confirmPassword" class="form__label">Confirm Password</label>
-                        <input id="confirmPassword" {...register("password", { required: true })} type="password" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
+                        <input id="confirmPassword" type="password" onBlur={(e) => checkFormIsValid(e, step2Form, step2Submit)} class="form-control form__input" required />
                         <div class="invalid-feedback">
                             <span class="form__feedback">Please confirm your password</span>
                         </div>

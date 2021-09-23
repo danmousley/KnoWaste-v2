@@ -5,17 +5,21 @@ import Step3 from './step3/step3';
 import Stepper from './stepper/stepper';
 import './register.scss';
 import { useHistory } from 'react-router';
+import { firestore } from '../../firebase';
+import { collection, addDoc, setDoc } from "firebase/firestore";
+import { parse } from "date-fns";
+
 
 const Register = () => {
     const [formStep, setFormStep] = useState(1);
-    // const [formData, setFormData] = useState([]);
-    const [name, setName] = useState([]);
+    const [step1Data, setStep1Data] = useState([]);
+    const [step2Data, setStep2Data] = useState([]);
+    const [name, setName] = useState({});
 
     const history = useHistory()
 
     const checkFormIsValid = (e, form, formSubmit) => {
         form.current.classList.add('was-validated')
-        console.log(e.target.classList)
         if (form.current.checkValidity()) {
             formSubmit.current.disabled = false
         } else {
@@ -23,18 +27,26 @@ const Register = () => {
         }
     }
 
-    const onSubmit = (data) => {
-        console.log(data)
-        // let updatedFormData = formData
-        // console.log(updatedFormData)
-        // updatedFormData.push(data)
-        // setFormData(updatedFormData)
-        setName(data.firstName);
-        if (formStep === 1 || formStep === 2) {
+    const onSubmit = async (data) => {
+        const usersCollection = collection(firestore, "users")
+        
+        if (formStep === 1) {
+            setName(data.firstName);
+            data.dateOfBirth = parse(data.dateOfBirth, "yyyy-MM-dd", new Date());
+            setStep1Data(data)
+            let newStep = formStep + 1
+            setFormStep(newStep)
+        }
+        if (formStep === 2) {
+            setStep2Data(data)
+            console.log(data)
+            console.log(step1Data)
             let newStep = formStep + 1
             setFormStep(newStep)
         }
         if (formStep === 3) {
+            const docRef = await addDoc(usersCollection, step1Data);
+            setDoc(docRef, step2Data, { merge: true })
             let path = "/dashboard"
             history.push(path)
         }

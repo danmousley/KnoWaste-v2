@@ -42,7 +42,7 @@ const Step3 = (props) => {
             </section>
             <div class="buttons my-auto">
                 <button type="button" onClick={(e) => handlePreviousClick(e)} class="btn btn-secondary button--form" value={2} >Previous</button>
-                <button type="submit" ref= { step3Submit } class="btn btn-primary button--form" disabled >Create Account</button>
+                <button type="submit" ref= { step3Submit } onClick={(e) => e.target.disabled=true} class="btn btn-primary button--form" disabled >Create Account</button>
             </div>
         </form>
         </>
