@@ -1,12 +1,13 @@
 import './App.scss';
 import Routes from './routes/routes';
+import NavBar from './shared/navbar/navbar.jsx';
 
 function App() {
   return (
     <>
-      {/* <section>
+      <section>
         <NavBar />
-      </section> */}
+      </section>
       <section>
         <Routes />
       </section>
