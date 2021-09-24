@@ -5,8 +5,15 @@ $success: #8EB987;
 $danger: #EE2C43;
 $default: #F2F2FF;
 
-$font-family-sans-serif: "Nunito, Helvetica Neue, Tahoma, Arial, San-Serif";
-$font-family-serif:      "Nunito, Helvetica Neue, Tahoma, Arial, San-Serif";
-$font-family-monospace:  "Nunito, Helvetica Neue, Tahoma, Arial, San-Serif";
-$font-family-base:       "Nunito, Helvetica Neue, Tahoma, Arial, San-Serif";
+$font-family-base:       Nunito, "Helvetica Neue", Tahoma, Arial, San-Serif;
+$font-family-sans-serif: $font-family-base;
+$font-family-serif:      $font-family-base;
+$font-family-monospace:  $font-family-base;
+$font-bold: 900;
+
+//spacing:
+
+$base-spacing: 5px;
+
+
 

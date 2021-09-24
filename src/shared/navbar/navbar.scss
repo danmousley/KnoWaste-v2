@@ -1,0 +1,124 @@
+@use '../../assets/styles/variables' as *;
+
+.nav {
+  align-items: center;
+  background-image: url('../../assets/images/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  font-family: $font-family-base;
+  padding: 0 $base-spacing * 4;
+
+  .logo {
+    align-items: center;
+    display: flex;
+
+    &__h1 {
+      font-weight: $font-bold;
+    }
+    
+    &__img {
+      margin-right: $base-spacing * 2;
+    }
+  }
+  
+  &__title {
+    align-items: center;
+    color: $secondary;
+    display: flex;
+    font-weight: 800;
+    justify-content: space-between;
+    padding: $base-spacing *2;
+  }
+  
+  &__links {
+    display: none;
+    margin: 0;
+  }
+
+  &__link {
+    list-style-type: none;
+    padding: $base-spacing * 2;
+    
+    a:not(.btn) {
+      color: $secondary;
+      text-decoration: none;
+    }
+
+    .btn {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  &__hamburger {
+    color: $secondary;
+    padding-right: $base-spacing * 2;
+  }
+
+  &__close {
+    display: none;
+  }
+
+  @media(max-width: 699px) {
+    &.mobile-visible {
+      display: block;
+
+      .nav__links {
+        display: block;
+        padding-left: $base-spacing * 2;
+      }
+      
+      .nav__hamburger {
+        display: none;
+      }
+
+      .nav__close {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .nav {
+    &__icon-container {
+      display: none;
+    }
+
+    &__links {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &__link {
+      margin-left: $base-spacing * 4;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 750px) {
+  .nav {
+    padding: 0 $base-spacing * 2;
+    
+    &__links {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .nav {
+    padding: 0 100px;
+  }
+}
+
+
