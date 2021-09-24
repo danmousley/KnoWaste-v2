@@ -6,8 +6,9 @@ import Stepper from './stepper/stepper';
 import './register.scss';
 import { useHistory } from 'react-router';
 import { firestore } from '../../firebase';
-import { collection, addDoc, setDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 import { parse } from "date-fns";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
 const Register = () => {
@@ -45,10 +46,28 @@ const Register = () => {
             setFormStep(newStep)
         }
         if (formStep === 3) {
-            const docRef = await addDoc(usersCollection, step1Data);
-            setDoc(docRef, step2Data, { merge: true })
-            let path = "/dashboard"
-            history.push(path)
+            const auth = getAuth();
+            const email = step1Data.email
+            const password = step2Data.password
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user
+                    console.log(user.uid)
+                    const docRef = doc(firestore, "users", user.uid)
+                    setDoc(docRef, step1Data)
+                    setDoc(docRef, step2Data, { merge: true })
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(`Error code: ${errorCode}. Error message: ${errorMessage}`)
+                })
+
+
+            // const docRef = await addDoc(usersCollection, step1Data);
+            // setDoc(docRef, step2Data, { merge: true })
+            // let path = "/dashboard"
+            // history.push(path)
         }
     }
 

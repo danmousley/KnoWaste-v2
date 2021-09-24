@@ -3,13 +3,23 @@ import './loginform.scss';
 import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import InputFeedback from '../../../shared/forms/inputFeedback/inputFeedback';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 
 const LogInForm = (props) => {
     const loginForm = useRef(null)
     const loginButton = useRef(null)
     const { checkFormIsValid, handleLogin, handleSignUp } = props;
 
-    const { register, handleSubmit } = useForm();
+    const schema = yup.object().shape({
+        email: yup.string().required(),
+        studentNo: yup.number().required(),
+        password: yup.string().required(),
+    })
+
+    const { register, handleSubmit } = useForm({
+        resolver: yupResolver(schema),
+    });
     
 
     return (

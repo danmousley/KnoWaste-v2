@@ -26,4 +26,4 @@ const app = initializeApp(firebaseConfig);
 const firestore = getFirestore(app)
 
 // 2. Export that functionality so other components can use it
-export { firestore }
+export { firestore, app }
